@@ -27,7 +27,6 @@
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN TD */
-extern uint8_t flg_dma_done;
 
 /* USER CODE END TD */
 
@@ -209,7 +208,6 @@ void DMA1_Channel3_IRQHandler(void)
   HAL_DMA_IRQHandler(&hdma_dac_ch1);
   /* USER CODE BEGIN DMA1_Channel3_IRQn 1 */
 
-  flg_dma_done = 1;
   /* USER CODE END DMA1_Channel3_IRQn 1 */
 }
 

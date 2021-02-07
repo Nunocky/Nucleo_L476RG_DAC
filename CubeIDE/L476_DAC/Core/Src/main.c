@@ -109,7 +109,6 @@ int main(void)
   /* USER CODE BEGIN 2 */
 
   HAL_TIM_Base_Start(&htim4);
-  HAL_DAC_Start(&hdac1, DAC_CHANNEL_1);
 
   uint8_t *p = (uint8_t *)&__USER_DATA;
   p += 4; // "RIFF"
@@ -408,6 +407,10 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
+void HAL_DAC_ConvCpltCallbackCh1(DAC_HandleTypeDef* hdac)
+{
+	flg_dma_done = 1;
+}
 
 /* USER CODE END 4 */
 
